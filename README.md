@@ -11,7 +11,7 @@ Pustaka PHP resmi untuk memudahkan integrasi layanan Host-to-Host (H2H) prabayar
 Instal pustaka dari Composer:
 
 ```bash
-composer require mrlow12/zakkistore-sdk
+composer require zakkistore/zakkistore-sdk
 ```
 
 ### Inisialisasi Klien
