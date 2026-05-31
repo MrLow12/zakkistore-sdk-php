@@ -1,0 +1,23 @@
+{
+    "name": "mrlow12/zakkistore-sdk",
+    "description": "Official PHP SDK Client Library for Zakki Store B2B API Gateway",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ZakkiXD",
+            "email": "b2b_partner@example.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MrLow12\\ZakkiStore\\": "src/"
+        }
+    }
+}
