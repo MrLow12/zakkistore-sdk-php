@@ -19,7 +19,7 @@ composer require mrlow12/zakkistore-sdk
 ```php
 require_once 'vendor/autoload.php';
 
-use MrLow12\ZakkiStore\ZakkiStore;
+use ZakkiStore\ZakkiStore;
 
 // Inisialisasi klien SDK (Bisa tanpa base_url karena official otomatis ter-set!)
 $zakki = new ZakkiStore([

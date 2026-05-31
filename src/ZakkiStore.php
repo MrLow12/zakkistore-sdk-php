@@ -1,6 +1,6 @@
 <?php
 
-namespace MrLow12\ZakkiStore;
+namespace ZakkiStore;
 
 class ZakkiStore {
     private $baseUrl;

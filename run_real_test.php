@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/src/ZakkiStore.php';
 
-use MrLow12\ZakkiStore\ZakkiStore;
+use ZakkiStore\ZakkiStore;
 
 function run_real_test() {
     echo "==================================================\n";
