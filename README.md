@@ -23,8 +23,10 @@ use MrLow12\ZakkiStore\ZakkiStore;
 
 // Inisialisasi klien SDK (Bisa tanpa base_url karena official otomatis ter-set!)
 $zakki = new ZakkiStore([
+    'baseUrl' => 'https://qris.zakki.store',
     'token' => 'API_TOKEN_ANDA',
     'iduser' => 'IBO99',
+    'email' => 'member@gmail.com',
     'pin' => '123456',              // PIN transaksi (Wajib untuk tabung & tarik)
     'autoWithdraw' => true          // Aktifkan penarikan saldo VA otomatis ke aplikasi!
 ]);
