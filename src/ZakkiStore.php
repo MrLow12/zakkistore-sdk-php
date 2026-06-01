@@ -361,15 +361,38 @@ class ZakkiStore {
     // --- 5. REWARD KOMPUTASI & GAME ---
     // ==========================================================
 
-    public function cekmining() {
+    public function cekmining($idmining) {
+        if (empty($idmining)) {
+            throw new \InvalidArgumentException('Parameter idmining wajib diisi.');
+        }
         return $this->_request('/cekmining', 'GET', [
-            'token' => $this->token
+            'idmining' => trim($idmining)
         ]);
     }
 
     public function mymining() {
         return $this->_request('/mymining', 'GET', [
             'token' => $this->token
+        ]);
+    }
+
+    public function miningStart() {
+        return $this->_request('/mining/start', 'GET', [
+            'token' => $this->token
+        ]);
+    }
+
+    public function miningSubmit($nonce, $signature) {
+        if ($nonce === null || $nonce === '') {
+            throw new \InvalidArgumentException('Parameter nonce wajib disertakan.');
+        }
+        if (empty($signature)) {
+            throw new \InvalidArgumentException('Parameter signature wajib disertakan.');
+        }
+        return $this->_request('/mining/submit', 'POST', [
+            'token' => $this->token,
+            'nonce' => $nonce,
+            'signature' => $signature
         ]);
     }
 
@@ -406,5 +429,64 @@ class ZakkiStore {
 
     public function status() {
         return $this->_request('/status', 'GET');
+    }
+
+    // ==========================================================
+    // --- 7. METODE INTEGRASI BARU ---
+    // ==========================================================
+
+    public function setcallback($site) {
+        return $this->_request('/setcallback', 'GET', [
+            'token' => $this->token,
+            'site' => trim($site)
+        ]);
+    }
+
+    public function delcallback() {
+        return $this->_request('/delcallback', 'GET', [
+            'token' => $this->token
+        ]);
+    }
+
+    public function setnotifbot($telegramId) {
+        return $this->_request('/setnotifbot', 'GET', [
+            'token' => $this->token,
+            'id' => trim($telegramId)
+        ]);
+    }
+
+    public function delnotifbot() {
+        return $this->_request('/delnotifbot', 'GET', [
+            'token' => $this->token
+        ]);
+    }
+
+    public function checktransfer($idtransfer) {
+        return $this->_request('/checktransfer', 'GET', [
+            'idtransfer' => trim($idtransfer)
+        ]);
+    }
+
+    public function mytransfer($transfer_type = 'all') {
+        return $this->_request('/mytransfer', 'GET', [
+            'token' => $this->token,
+            'type' => trim($transfer_type)
+        ]);
+    }
+
+    public function mytopup() {
+        return $this->_request('/mytopup', 'GET', [
+            'token' => $this->token
+        ]);
+    }
+
+    public function cekmyip() {
+        return $this->_request('/cekmyip', 'GET');
+    }
+
+    public function cekip($ip) {
+        return $this->_request('/cekip', 'GET', [
+            'ip' => trim($ip)
+        ]);
     }
 }
