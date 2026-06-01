@@ -37,7 +37,7 @@ $zakki = new ZakkiStore([
 ## 🛠️ Fitur Unggulan
 
 ### 🔄 Auto-Withdraw Saldo VA
-Jika opsi `'autoWithdraw' => true` diaktifkan, SDK akan memicu penarikan dana VA bank otomatis secara *real-time* menjadi saldo utama aplikasi (BukaOlshop) ketika fungsi `$zakki->checkbank()` dipanggil.
+Jika opsi `'autoWithdraw' => true` diaktifkan, SDK akan memicu penarikan dana VA bank otomatis secara *real-time* menjadi saldo utama aplikasi (Zakki Store) ketika fungsi `$zakki->checkbank()` dipanggil.
 
 ### 💡 Dual-Flow Pascabayar & Bebas Nominal
 *   **Pascabayar (PLN/BPJS/PDAM):** Inquiry tagihan terlebih dahulu, lalu bayar dengan format tujuan `[ID_Pelanggan].[Nominal_Tagihan]` (Contoh: `122345678901.150000`).
@@ -64,7 +64,7 @@ SDK PHP ini mendukung secara penuh seluruh **25 fungsi resmi** dengan nama dan p
 *   `$zakki->checkbank()` — Cek saldo, VA member, mutasi, dan pemicu Auto-Withdraw.
 *   `$zakki->checkname($number)` — Verifikasi nama asli pemilik VA Bank Zakki tujuan.
 *   `$zakki->transfer($to, $amount)` — Transfer saldo antar Virtual Account member Bank Zakki. Mendukung penulisan array asosiatif: `transfer(['to' => '...', 'amount' => 5000])`.
-*   `$zakki->tabung($jumlah)` — Menabung / deposit saldo dari aplikasi utama (BukaOlshop) ke Bank (butuh PIN).
+*   `$zakki->tabung($jumlah)` — Menabung / deposit saldo dari aplikasi utama (Zakki Store) ke Bank (butuh PIN).
 *   `$zakki->tarik($jumlah)` — Menarik dana tabungan ke saldo aplikasi (butuh PIN).
 *   `$zakki->checkmutasi($mutasi_type)` — Riwayat mutasi Tarik/Tabung (`tarik`, `tabung`, `all`).
 
