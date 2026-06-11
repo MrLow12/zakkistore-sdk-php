@@ -138,6 +138,10 @@ class ZakkiStore {
         ]);
     }
 
+    public function cektopup2($idtopup) {
+        return rtrim($this->baseUrl, '/') . '/cektopup2?idtopup=' . urlencode($idtopup);
+    }
+
     public function cancel($id_transaksi = null, $all_pending = false) {
         // Fleksibilitas jika argumen pertama adalah boolean (true/false)
         if (is_bool($id_transaksi)) {
